@@ -1,0 +1,30 @@
+spring:
+  rabbitmq:
+    host: 129.204.109.228
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        INMessage:
+          group: test #此处设置多实例的消费者只能有一个能接收消息
+          content-type: application/json #设置消息为JSON格式，方便在web控制台直接查看
+#      binders:
+#        local_rabbit:
+#          type: rabbit
+#          environment:
+#            spring:
+#              rabbitmq:
+#                host: 129.204.109.228
+#                port: 5672
+#                username: guest
+#                password: guest
+#                virtual-host: /
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8765

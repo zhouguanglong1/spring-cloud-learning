@@ -1,0 +1,8 @@
+spring:
+#  rabbitmq:
+#    host: http://129.204.109.228
+#    port: 5672
+#    username: guest
+#    password: guest
+  profiles:
+    active: dev

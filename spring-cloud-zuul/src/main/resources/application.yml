@@ -1,0 +1,45 @@
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: zuul
+    prefer-ip-address: true
+    appname: zuul
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+#      defaultZone: http://localhost:8761/eurekaServer/eureka/
+zuul:
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+#  add-host-header: true
+#  sensitive-headers:
+#  strip-prefix: false
+  routes:
+    voltepr:
+      path: /voltepr/**
+      serviceId: voltepr
+      sensitive-headers: "*"
+      strip-prefix: false
+    eurekaClient:
+      path: /eurekaClient/**
+      serviceId: eurekaClient
+      sensitive-headers: "*" #敏感头过滤，可直接设置为空
+      strip-prefix: false
+#  ignored-patterns:
+#    -- /**/postRegister #设置忽略的路由
+#  add-host-header: true
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  eureka:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 3000
