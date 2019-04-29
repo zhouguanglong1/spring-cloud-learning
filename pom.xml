@@ -33,6 +33,8 @@
 		<module>spring-cloud-sidecar</module>
 		<module>spring-cloud-stream-rabbitmq</module>
 		<module>spring-cloud-config</module>
+		<module>spring-cloud-provider</module>
+		<module>spring-cloud-consumer</module>
 	</modules>
 
 
