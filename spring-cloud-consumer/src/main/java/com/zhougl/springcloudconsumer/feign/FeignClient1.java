@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * 2019/4/30
  **/
 @org.springframework.cloud.openfeign.FeignClient(value = "provider")
-public interface FeignClient {
+public interface FeignClient1 {
     @GetMapping("/provider/test")
     String test(@RequestParam("name") String name);
 }

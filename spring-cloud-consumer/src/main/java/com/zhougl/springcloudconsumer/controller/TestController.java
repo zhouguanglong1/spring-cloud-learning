@@ -1,6 +1,6 @@
 package com.zhougl.springcloudconsumer.controller;
 
-import com.zhougl.springcloudconsumer.feign.FeignClient;
+import com.zhougl.springcloudconsumer.feign.FeignClient1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@RequestMapping("test")
 public class TestController {
     @Autowired
-    FeignClient feignClient;
+    FeignClient1 feignClient;
 
     @RequestMapping("test")
     public String test(String name){
